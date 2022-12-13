@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="center">
       <div className="w-full flex flex-col-reverse md:flex-row md:items-center md:justify-center md:gap-x-4 py-12 px-4">
         <div className="text-center">
           <h1 className="font-medium text-4xl">Luzzitto Tupaz</h1>
@@ -11,7 +11,7 @@ const Header = () => {
           <h3 className="text-sm text-blue-500 font-bold">
             Available for Security Clearance
           </h3>
-          <div className="mt-4 flex items-center justify-center gap-4">
+          <div className="mt-4 center gap-4">
             <Link
               href="https://github.com/Luzzitto"
               className="flex items-center bg-[#24292f] btn text-white"

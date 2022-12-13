@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getImageSize } from "next/dist/server/image-optimizer";
+import { useEffect } from "react";
 
 interface SkillItemProp {
   name: string;
@@ -15,7 +16,7 @@ function colorPicker() {
 function SkillItem({ name, logo, proficiency }: SkillItemProp) {
   let randomColor = colorPicker();
   return (
-    <div className="grow flex items-center px-2 py-4">
+    <div className="grow flex items-center px-4 py-4">
       <div className="h-20 w-20">
         <Image
           src={logo}
@@ -77,18 +78,20 @@ const Skills = () => {
   ];
   skills.sort((a, b) => b.proficiency - a.proficiency);
   return (
-    <div className="bg-gray-100 p-6">
-      <h1 className="text-2xl mb-2">Skills</h1>
-      <div className="flex flex-col justify-start md:grid md:grid-cols-2">
-        {skills.map((e) => {
-          return (
-            <SkillItem
-              name={e.name}
-              logo={e.logo}
-              proficiency={e.proficiency}
-            />
-          );
-        })}
+    <div className="bg-gray-100">
+      <div className="container mx-auto md:w-1/8 px-6 py-12">
+        <h1 className="text-4xl mb-2 font-medium">Skills</h1>
+        <div className="flex flex-col justify-start md:grid md:grid-cols-2 md:gap-4">
+          {skills.map((e) => {
+            return (
+              <SkillItem
+                name={e.name}
+                logo={e.logo}
+                proficiency={e.proficiency}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
